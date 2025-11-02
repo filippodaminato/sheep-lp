@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sheep — Join the Initiative</title>
+  <meta name="description" content="Sheep — Autonomous AI software team. Join as investor or collaborator." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0c0f14;
+      --bg-secondary:#11151d;
+      --card:rgba(255,255,255,.05);
+      --text:#f5f7fa;
+      --muted:#a0a6b3;
+      --accent:#4d7fff;
+      --accent-2:#82a3ff;
+      --radius:16px;
+      --shadow:0 10px 40px rgba(0,0,0,.35);
+      --maxw:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 70% -10%,rgba(77,127,255,.15),transparent 60%), var(--bg);
+      color:var(--text); font-family:"Space Grotesk",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px; color:var(--text); font-weight:700; letter-spacing:.2px}
+    .badge{font:500 12px/1 "Roboto Mono",monospace; color:var(--accent-2); border:1px solid rgba(130,163,255,.3); padding:6px 10px; border-radius:999px; background:rgba(130,163,255,.08)}
+    .cta{display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#0b1020; border:0; padding:12px 16px; border-radius:12px; font-weight:700; box-shadow:var(--shadow); cursor:pointer}
+    .cta:hover{filter:brightness(.98)}
+    .hero{padding:56px 0 32px}
+    .eyebrow{color:var(--accent-2); font:500 13px/1 "Roboto Mono",monospace; letter-spacing:.3px; text-transform:uppercase; opacity:.9}
+    h1{font-size: clamp(32px, 5vw, 54px); line-height:1.05; margin:12px 0 10px}
+    .sub{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted); max-width:780px}
+    .cards{display:grid; grid-template-columns:1fr; gap:16px; margin:26px 0 6px}
+    @media (min-width:860px){
+      .cards{grid-template-columns: repeat(3, 1fr);}
+    }
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px 16px}
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0; color:var(--muted); font-size:15px}
+    .section{margin:38px 0}
+    .panel{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .panel h2{margin:0 0 8px; font-size:26px}
+    .panel p.lead{margin:0 0 18px; color:var(--muted)}
+    /* Tally embed container */
+    .embed-wrap{position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); background:#0e121a}
+    .embed-wrap iframe{width:100%; height:720px; border:0; display:block}
+    /* Native form (fallback) */
+    .or{display:flex; align-items:center; gap:12px; color:var(--muted); font:500 12px/1 "Roboto Mono",monospace; margin:16px 0}
+    .or:before,.or:after{content:""; height:1px; background:rgba(255,255,255,.12); flex:1}
+    form{display:grid; gap:14px}
+    label{font:600 14px/1.2 "Space Grotesk"}
+    input,select,textarea{
+      width:100%; padding:12px 12px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.12); background:#0e121a; color:var(--text);
+      font:500 15px/1.25 "Space Grotesk";
+    }
+    textarea{min-height:120px; resize:vertical}
+    .grid{display:grid; gap:14px}
+    @media (min-width:760px){ .grid.two{grid-template-columns:1fr 1fr} }
+    .hint{color:var(--muted); font:500 12px/1.2 "Roboto Mono",monospace}
+    .consent{display:flex; align-items:flex-start; gap:10px; color:var(--muted); font-size:13px}
+    footer{padding:34px 0 60px; color:var(--muted); font-size:13px}
+    .mini{display:flex; gap:16px; flex-wrap:wrap}
+    .tag{font:500 12px/1 "Roboto Mono",monospace; color:var(--accent-2)}
+
+.logo {
+    display: flex;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    align-items: center;
+    gap: 15px;
+
+    .logo-img{
+      width: 30px;
+      height: auto;
+    }
+    .title-img{
+      width: 65px;
+      height: auto;
+    }
+}
+  </style>
+  <!-- Tally embed helper (optional, for popup forms) -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+<a class="logo" href="index.html"> <img class="logo-img" src="assets/logo.png" alt=""> <img class="title-img" src="assets/sheep_logo.png" alt=""> </a>
+        <span class="badge">Early Access</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow">Autonomous AI Software Team</span>
+      <h1>Your next engineer isn’t human.</h1>
+      <p class="sub">We’re opening conversations with <strong>investors</strong> and <strong>collaborators</strong> who want to help shape the foundation.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Investors</h3>
+          <p>Pre-seed conversations for AI infrastructure & autonomous systems. Warm intros welcome.</p>
+        </div>
+        <div class="card">
+          <h3>Engineers & Builders</h3>
+          <p>AI, backend, infra, UX. Early equity options for core contributors.</p>
+        </div>
+        <div class="card">
+          <h3>Pilot Teams</h3>
+          <p>Automate real coding tasks on private GitHub repos. Limited early access.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Join the Sheep Initiative — Investors & Collaborators</h2>
+        <p class="lead">Fill out the form below. We’ll reach out if there’s alignment for pilots, investment, or hands-on collaboration.</p>
+
+        <div class="embed-wrap" aria-label="Application form embed">
+          <!-- Replace the src with your actual Tally or NotionForms public form URL -->
+          <iframe style="border:none;width:100%;" id="sheep-collaboration-form-04b41q" src="https://noteforms.com/forms/sheep-collaboration-form-04b41q"></iframe><script type="text/javascript" onload="initEmbed('sheep-collaboration-form-04b41q')" src="https://noteforms.com/widgets/iframe.min.js"></script>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="wrap" aria-label="Site footer">
+
+      <p style="margin-top:10px"> © 2025 Sheep Technologies · Built by people and AI, together.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

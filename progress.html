@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sheep – Current State of the Art</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"> <img class="logo-img" src="assets/logo.png" alt=""> <img class="title-img" src="assets/sheep_logo.png" alt=""> </a>
+  <ul>
+  <ul>
+    <li><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="progress.html">Progress</a></li>
+    <li><a class="early-acc-btn" href="early_access.html">Join the Early Access</a></li>
+  </ul>
+  </ul>
+</nav>
+
+<section class="section">
+  <h1>Current State of the Art</h1>
+  <p>Sheep isn’t just an idea — it’s already running.  
+     This page outlines what we’ve built, what’s in progress, and what’s next.</p>
+</section>
+
+<section class="section">
+  <h2>Completed Milestones</h2>
+
+  <div class="card">
+    <h3>Core Orchestration Engine</h3>
+    <p>Built the foundation that manages goal decomposition and interdependent tasks dynamically.  
+       Agents can already coordinate on small-scale software operations such as code edits, tests, and documentation.</p>
+  </div>
+
+  <div class="card">
+    <h3>Repository Context Indexer</h3>
+    <p>Implemented a semantic indexing system that scans codebases, creates embeddings and metadata,  
+       and retrieves relevant files for each task using a local vector store (Chroma / FAISS).</p>
+  </div>
+
+  <div class="card">
+    <h3>GitHub Integration (Prototype)</h3>
+    <p>Connected Sheep to GitHub for real repositories: it now generates branches, applies AI-generated patches,  
+       and opens pull requests ready for human review.</p>
+  </div>
+
+  <div class="card">
+    <h3>Human Review Layer (MVP)</h3>
+    <p>Added an approval interface where human reviewers can inspect, correct, and approve AI-generated work.  
+       All feedback is logged and used to continuously train the agents.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>In Progress</h2>
+
+  <div class="card">
+    <h3>Adaptive Task Network</h3>
+    <p>The execution graph can now restructure itself based on results, errors, or new priorities discovered during runtime.  
+       This allows Sheep to act like a living project manager, optimizing work as it happens.</p>
+  </div>
+
+  <div class="card">
+    <h3>Agent-to-Human Communication Nodes</h3>
+    <p>Developing specialized “communication agents” that reach out to human teammates on Slack or email when context is missing,  
+       ensuring continuous collaboration without bottlenecks.</p>
+  </div>
+
+  <div class="card">
+    <h3>Private Multi-Agent Pool</h3>
+    <p>Experimenting with a closed ecosystem of specialized agents (code, QA, documentation, DevOps) that share context and reasoning.  
+       Early tests show promising cooperation and reduction in repetitive queries.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Research & Upcoming Goals</h2>
+
+  <div class="card">
+    <h3>STEP v4 Dataset Collection</h3>
+    <p>Gathering structured logs and review data from Sheep to train the reasoning layer that will power the STEP Protocol.</p>
+  </div>
+
+  <div class="card">
+    <h3>Early Partner Pilots</h3>
+    <p>Preparing pilot programs with two software houses to validate Sheep’s efficiency in real production environments.</p>
+  </div>
+
+  <div class="card">
+    <h3>Learning from Human Feedback</h3>
+    <p>Building the pipeline that transforms human corrections into actionable model fine-tuning data.</p>
+  </div>
+</section>
+
+
+<footer>
+  © 2025 Sheep Technologies · Built by people and AI, together.
+</footer>
+</body>
+</html>
