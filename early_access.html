@@ -112,6 +112,77 @@
     }
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 255, 0.25);
+  background: rgba(15, 19, 28, 0.55);
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+/* Hamburger */
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #f5f7fa;
+  display: none;
+  padding: 6px;
+}
+
+.hamburger {
+  width: 28px;
+  height: 28px;
+}
+
+.line {
+  transition: all 0.3s ease;
+}
+
+/* Animation for open state */
+.nav-toggle.active .line1 {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle.active .line2 {
+  opacity: 0;
+}
+.nav-toggle.active .line3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+.nav-toggle:hover {
+  border-color: rgba(148, 163, 255, 0.5);
+  background: rgba(15, 19, 28, 0.75);
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle span + span {
+  margin-top: 5px;
+}
+nav.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+nav.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+nav.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-toggle { display: inline-flex; }
@@ -170,15 +241,40 @@
       .consent { flex-direction: column; gap: 8px; }
     }
   </style>
+  <script>
+  (function () {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var toggle = nav.querySelector('.nav-toggle');
+    var links = nav.querySelectorAll('.nav-links a');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nav-open');
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (!nav.classList.contains('nav-open')) return;
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </head>
 <body>
   <nav>
     <a class="logo" href="index.html"> <img class="logo-img" src="assets/logo.png" alt=""> <img class="title-img" src="assets/sheep_logo.png" alt=""> </a>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <svg class="hamburger" width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path class="line line1" d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line2" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line3" d="M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
     <ul class="nav-links">
       <li><a href="roadmap.html">Roadmap</a></li>
       <li><a href="progress.html">Progress</a></li>

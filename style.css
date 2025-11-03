@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
 
+:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
 :root {
   --bg: #0c0f14;
@@ -28,7 +32,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 2rem 1.5rem;
   background: rgba(17,21,29,0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -36,25 +40,30 @@ nav {
   top: 0;
   z-index: 100;
 }
-nav a.logo {
-    display: flex;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-    align-items: center;
-    gap: 15px;
 
-    .logo-img{
-      width: 30px;
-      height: auto;
-    }
-    .title-img{
-      width: 65px;
-      height: auto;
-    }
+nav a.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.5px;
 }
+
+/* ✅ Queste vanno fuori da a.logo */
+.logo-img {
+  width: 28px;
+  height: auto;
+}
+
+.title-img {
+  width: 70px;
+  height: auto;
+}
+
+/* Menu links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -63,32 +72,62 @@ nav a.logo {
   margin: 0;
   padding: 0;
 }
+
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.25s ease;
 }
+
 .nav-links a:hover {
   color: var(--accent);
-}
-.nav-links a.active {
-  color: var(--accent-light);
 }
 
 .nav-toggle {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   border: 1px solid rgba(148, 163, 255, 0.25);
   background: rgba(15, 19, 28, 0.55);
   color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s ease, background 0.25s ease;
 }
+
+/* 📱 Responsività per iPhone 7 e simili (<= 480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem 1.2rem;
+  }
+  .logo-img {
+    width: 22px;
+  }
+  .title-img {
+    width: 50px;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
+  nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: rgba(17,21,29,0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+}
+
 
 /* Hamburger */
 .nav-toggle {
