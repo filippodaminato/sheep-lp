@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sheep – Privacy Policy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <meta name="description" content="Privacy Policy for Sheep — explaining how we collect, store, and protect user data for early access, collaboration, and investment opportunities.">
+
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"> <img class="logo-img" src="assets/logo.png" alt=""> <img class="title-img" src="assets/sheep_logo.png" alt=""> </a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <svg class="hamburger" width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path class="line line1" d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line2" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line3" d="M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <ul class="nav-links">
+    <li><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="progress.html">Progress</a></li>
+    <li><a class="early-acc-btn" href="early_access.html">Join the Early Access</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+  <h1>Privacy Policy — Sheep Initiative</h1>
+  <br>
+  <p>
+    This website collects limited personal data (such as name, email, and professional information) through voluntary forms, for the purpose of contacting potential investors, collaborators, and early users.
+  </p> 
+
+  <h2>Data Controller</h2>
+  <p>
+    Until the incorporation of Sheep Inc., the data controller is <strong>Filippo Daminato</strong> (founder), based in Italy.<br>
+    Contact: <a href="mailto:filippodaminato@gmail.com">filippodaminato@gmail.com</a>
+  </p>
+
+  <h2>Purpose of Processing</h2>
+  <p>
+    Data is used exclusively to communicate about Sheep’s development, early access, collaboration opportunities, or related investment discussions.
+  </p>
+
+  <h2>Data Storage</h2>
+  <p>
+    Data may be stored in third-party platforms (e.g. Notion) under secure access. No data will be sold or shared with third parties.
+  </p>
+
+  <h2>Data Retention</h2>
+  <p>
+    Data will be kept only as long as necessary for communication regarding Sheep’s activities. You can request deletion at any time by email.
+  </p>
+
+  <h2>Legal Basis</h2>
+  <p>
+    Processing is based on the consent you provide by submitting the form.
+  </p>
+
+  <h2>Your Rights</h2>
+  <p>
+    You can request access, correction, or deletion of your data at any time by contacting the controller.
+  </p>
+
+  <p><em>Last updated: November 2025</em></p>
+</section>
+
+
+
+
+<footer>
+  © 2025 Sheep Technologies · Built by people and AI, together.
+</footer>
+<script>
+  (function () {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var toggle = nav.querySelector('.nav-toggle');
+    var links = nav.querySelectorAll('.nav-links a');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nav-open');
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (!nav.classList.contains('nav-open')) return;
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

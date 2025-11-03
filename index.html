@@ -14,7 +14,14 @@
 <body>
 <nav>
   <a class="logo" href="index.html"> <img class="logo-img" src="assets/logo.png" alt=""> <img class="title-img" src="assets/sheep_logo.png" alt=""> </a>
-  <ul>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <svg class="hamburger" width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path class="line line1" d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line2" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="line line3" d="M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <ul class="nav-links">
     <li><a href="roadmap.html">Roadmap</a></li>
     <li><a href="progress.html">Progress</a></li>
     <li><a class="early-acc-btn" href="early_access.html">Join the Early Access</a></li>
@@ -64,37 +71,50 @@
 
 <section class="section">
   <h2>Why Now</h2>
-    <p>
-    Developers already use LLMs, but through endless chat windows, without structure or context.  
-    Sheep transforms that noise into an organized, adaptive workflow where AI and humans truly collaborate.
+  <p>
+    AI has changed how developers write code — but not how software is built.  
+    Today, teams talk to LLMs through endless chat prompts and isolated tools, without memory, context, or coordination.  
+    <strong>Sheep turns that chaos into structure.</strong>
+  </p>
+  <p>
+    It’s not another assistant. Sheep is an <span class="highlight">autonomous orchestration layer</span> where multiple AI agents and humans collaborate inside a single, evolving workflow.  
+    Issues become connected, context is shared, and execution becomes continuous.
   </p>
 
   <div class="grid-2" style="margin-top:2rem;">
     <div class="card">
       <h3>Adaptive Intelligence</h3>
-      <p>Sheep structures work as a <span class="highlight">dynamic network of tasks</span> that reorganizes itself in real time as agents discover new information.  
-         The system learns and optimizes continuously, like a real engineering team that adapts while it builds.</p>
+      <p>
+        Sheep structures every Task as a <span class="highlight">dynamic graph of issues</span>.  
+        Each agent focuses on one issue ( coding, reviewing, testing ) while the system reorganizes itself as it learns.  
+        The result is a workflow that behaves like a real engineering team: autonomous, contextual, and adaptive.
+      </p>
     </div>
+
     <div class="card">
       <h3>Human Supervision</h3>
-      <p>Every action is <span class="highlight">reviewed, approved, and reversible</span>.  
-         People remain in control; AI executes the repetitive work.  
-         Each human correction becomes new training data for future improvement.</p>
+      <p>
+        Every action remains <span class="highlight">auditable and reversible</span>.  
+        Humans define goals and validate results; AI handles the repetitive work.  
+        Each correction becomes feedback, allowing the system to improve over time without losing control or transparency.
+      </p>
     </div>
   </div>
 </section>
 
 
 <section class="section">
-<h2>Engineered for Real Work</h2>
+  <h2>Engineered for Real Work</h2>
   <p>
-    At the core of Sheep is a proprietary orchestration engine coordinating multiple AI agents in real time.  
-    It treats every project as a living network of evolving tasks, optimizing execution as it learns.
+    At the heart of Sheep is a proprietary orchestration engine that coordinates multiple AI agents in real time.  
+    It treats every repository as a living ecosystem: indexing its code, learning from commits, and executing tasks through an intelligent Directed Acyclic Graph (DAG) of issues.
   </p>
   <p>
-    Built for speed, cost-efficiency, and reliability, it’s a foundation that’s hard to replicate and effortless to scale.
+    This architecture allows Sheep to <span class="highlight">plan, execute, and learn</span> across complex projects with human-level reasoning and machine-level speed.  
+    Built for enterprise reliability and scalability, it’s the bridge between today’s AI tools and tomorrow’s autonomous software teams.
   </p>
 </section>
+
 
 
 <section class="workflow-body">
@@ -391,7 +411,6 @@
     </div>
     <footer class="pr-footer">
       <button class="btn">Open in GitHub →</button>
-      <button class="btn btn--ghost">View Evidence Packet</button>
     </footer>
   </div>
 </div>
@@ -420,5 +439,28 @@
 <footer>
   © 2025 Sheep Technologies · Built by people and AI, together.
 </footer>
+<script>
+  (function () {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var toggle = nav.querySelector('.nav-toggle');
+    var links = nav.querySelectorAll('.nav-links a');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nav-open');
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (!nav.classList.contains('nav-open')) return;
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
